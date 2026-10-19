@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sé distribuidor Villaizán</title>
+<meta name="description" content="Déjanos tus datos y te contactamos para llevar las paletas amazónicas Villaizán a tu negocio.">
+<meta property="og:title" content="Sé distribuidor Villaizán">
+<meta property="og:description" content="Lleva nuestras paletas amazónicas a tu negocio.">
+<meta property="og:image" content="../brand/logo-rojo-hd.png">
+<meta name="theme-color" content="#CA0202">
+<link rel="icon" href="../brand/v-128.png">
+<link rel="apple-touch-icon" href="../brand/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Figtree:wght@400;600;800&family=Roboto+Slab:wght@700&display=swap">
+<style>
+:root{--rojo:#CA0202;--hondo:#A00202;--crema:#F4E8D2;--papel:#FBF6EC;--ocre:#D2A35F;--cacao:#2A1A13;--verde:#1E6B43;--muted:#6E5A4C;--line:#E6D8BF}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--papel);color:var(--cacao);font:400 16px/1.45 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:520px;margin:0 auto}
+header{background:var(--rojo);padding:28px 24px 58px;text-align:center;position:relative}
+header img{width:168px;height:auto;display:block;margin:0 auto}
+h1{margin:18px 0 10px;font:400 30px/1.1 'Alfa Slab One',serif;color:var(--crema)}
+header p{margin:0 auto;max-width:330px;color:var(--crema);font-size:15px}
+.onda{position:absolute;left:0;bottom:-1px;width:100%;height:30px;display:block}
+main{padding:8px 16px 0;display:flex;flex-direction:column;gap:22px}
+.card{background:#fff;border:1.5px solid var(--line);border-radius:20px;padding:22px 18px;display:flex;flex-direction:column;gap:16px}
+.card h2{display:flex;align-items:center;gap:10px;margin:0;font:400 21px 'Alfa Slab One',serif;color:var(--rojo)}
+.num{width:32px;height:32px;border-radius:50%;background:var(--ocre);color:var(--cacao);font:400 17px 'Alfa Slab One',serif;display:inline-flex;align-items:center;justify-content:center;flex:none}
+label.lab{display:block;font:600 14px/1.3 Figtree,sans-serif;margin-bottom:6px}
+label.sub{font-weight:400;font-size:13px;color:var(--muted)}
+input,select{width:100%;height:50px;border:1.5px solid var(--line);border-radius:12px;background:#fff;padding:0 14px;font:400 16px Figtree,sans-serif;color:var(--cacao);-webkit-appearance:none;appearance:none}
+select{background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'%3E%3Cpath d='M1 1l6 6 6-6' fill='none' stroke='%23CA0202' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 16px center;padding-right:40px}
+select:disabled{background-color:#F6F0E4;color:#9A8877}
+input:focus,select:focus{outline:none;border-color:var(--rojo);box-shadow:0 0 0 3px rgba(202,2,2,.15)}
+.hint{font-size:12px;color:var(--muted);margin-top:5px}
+.err{display:none;font-size:13px;font-weight:600;color:var(--hondo);margin-top:5px}
+.bad input,.bad select{border-color:var(--rojo)}
+.bad .err{display:block}
+.bad .hint{display:none}
+.dos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.tel{display:flex;gap:8px}
+.tel span{flex:none;width:70px;height:50px;border:1.5px solid var(--line);border-radius:12px;background:var(--crema);display:flex;align-items:center;justify-content:center;font-weight:600}
+.grupo{display:flex;flex-direction:column;gap:12px}
+.oculto{display:none}
+.trampa{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.ok{display:flex;gap:12px;align-items:flex-start;font-size:13px;color:var(--muted);cursor:pointer}
+.ok input{flex:none;width:24px;height:24px;margin:0;border-radius:6px;border:2px solid var(--ocre);appearance:none;-webkit-appearance:none;padding:0;display:grid;place-content:center;background:#fff}
+.ok input:checked{background:var(--rojo);border-color:var(--rojo)}
+.ok input:checked::after{content:"";width:11px;height:6px;border:solid #fff;border-width:0 0 3px 3px;transform:rotate(-45deg) translate(1px,-1px)}
+.ok.bad input{border-color:var(--rojo)}
+button.enviar{height:58px;border:0;border-radius:16px;background:var(--rojo);color:#fff;font:400 20px 'Alfa Slab One',serif;box-shadow:0 6px 0 var(--hondo);cursor:pointer;transition:transform .08s,box-shadow .08s}
+button.enviar:active{transform:translateY(4px);box-shadow:0 2px 0 var(--hondo)}
+button.enviar:disabled{opacity:.7;cursor:wait}
+.aviso{display:none;background:#FFF0EE;border:1.5px solid var(--rojo);color:var(--hondo);border-radius:12px;padding:12px 14px;font-size:14px;font-weight:600}
+footer{margin-top:36px;padding:28px 20px 34px;background:var(--verde);text-align:center;color:var(--crema)}
+footer img{width:54px;height:54px;display:block;margin:0 auto 10px}
+.firma{font:700 18px 'Roboto Slab',serif}
+footer small{display:block;font-size:12px;opacity:.85;margin-top:6px}
+#gracias{display:none;min-height:100vh;background:var(--rojo);color:var(--crema);text-align:center;padding:40px 28px;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+#gracias img{width:190px;height:auto}
+.check{width:84px;height:84px;border-radius:50%;background:var(--crema);display:flex;align-items:center;justify-content:center;animation:pop .5s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+#gracias h2{margin:0;font:400 32px/1.1 'Alfa Slab One',serif}
+#gracias p{margin:0;max-width:300px;font-size:16px}
+.ig{display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 26px;border-radius:16px;background:var(--crema);color:var(--rojo);font:400 17px 'Alfa Slab One',serif;text-decoration:none}
+#gracias .firma{color:var(--ocre);margin-top:12px}
+body.listo .wrap{display:none}
+body.listo #gracias{display:flex}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <img src="../brand/logo-crema.png" alt="Villaizán Paletas Amazónicas">
+    <h1>Sé distribuidor Villaizán</h1>
+    <p>Déjanos tus datos y te contactamos para llevar nuestras paletas amazónicas a tu negocio.</p>
+    <svg class="onda" aria-hidden="true" viewBox="0 0 390 30" preserveAspectRatio="none"><path d="M0 14 C 65 2, 130 26, 195 14 S 325 2, 390 14 L390 30 L0 30 Z" fill="#FBF6EC"/><path d="M0 14 C 65 2, 130 26, 195 14 S 325 2, 390 14" fill="none" stroke="#D2A35F" stroke-width="4" vector-effect="non-scaling-stroke"/></svg>
+  </header>
+
+  <form id="f" novalidate>
+  <main>
+    <section class="card">
+      <h2><span class="num">1</span>Tus datos</h2>
+      <div class="campo" data-v="nombre"><label class="lab" for="nombre">Nombre y apellido</label><input id="nombre" name="nombre" autocomplete="name" maxlength="80"><div class="err">Escribe tu nombre y apellido.</div></div>
+      <div class="dos">
+        <div class="campo" data-v="dni"><label class="lab" for="dni">DNI</label><input id="dni" name="dni" inputmode="numeric" maxlength="8"><div class="hint">8 dígitos</div><div class="err">Deben ser 8 dígitos.</div></div>
+        <div class="campo" data-v="ruc"><label class="lab" for="ruc">RUC</label><input id="ruc" name="ruc" inputmode="numeric" maxlength="11"><div class="hint">11 dígitos</div><div class="err">Deben ser 11 dígitos.</div></div>
+      </div>
+      <div class="campo" data-v="telefono"><label class="lab" for="telefono">Teléfono / WhatsApp</label>
+        <div class="tel"><span>+51</span><input id="telefono" name="telefono" inputmode="tel" autocomplete="tel-national" maxlength="11"></div>
+        <div class="err">Escribe un celular de 9 dígitos.</div></div>
+    </section>
+
+    <section class="card">
+      <h2><span class="num">2</span>Tu negocio</h2>
+      <div class="campo" data-v="tipo"><label class="lab" for="tipo">Tipo de negocio</label>
+        <select id="tipo" name="tipo"><option value="">Elige una opción</option></select>
+        <div class="err">Elige el tipo de negocio.</div></div>
+      <div class="campo oculto" id="otroBox" data-v="otro"><label class="lab" for="otro">¿Qué tipo de negocio es?</label><input id="otro" name="otro" maxlength="60"><div class="err">Cuéntanos qué tipo de negocio es.</div></div>
+
+      <div class="grupo">
+        <span class="lab" style="margin:0">¿Dónde está tu negocio?</span>
+        <div class="campo" data-v="departamento"><label class="lab sub" for="departamento">Departamento</label><select id="departamento" name="departamento"><option value="">Elige el departamento</option></select><div class="err">Elige el departamento.</div></div>
+        <div class="campo" data-v="provincia"><label class="lab sub" for="provincia">Provincia</label><select id="provincia" name="provincia" disabled><option value="">Primero elige el departamento</option></select><div class="err">Elige la provincia.</div></div>
+        <div class="campo" data-v="distrito"><label class="lab sub" for="distrito">Distrito</label><select id="distrito" name="distrito" disabled><option value="">Primero elige la provincia</option></select><div class="err">Elige el distrito.</div></div>
+      </div>
+
+      <div class="campo" data-v="como"><label class="lab" for="como">¿Cómo nos conociste?</label>
+        <select id="como" name="como"><option value="">Elige una opción</option></select>
+        <div class="err">Elige una opción.</div></div>
+      <div class="trampa" aria-hidden="true"><label for="web">No llenar</label><input id="web" name="web" tabindex="-1" autocomplete="off"></div>
+    </section>
+
+    <label class="ok campo" data-v="acepta"><input type="checkbox" id="acepta" name="acepta"><span>Autorizo a Villaizán a usar mis datos para contactarme sobre la distribución de sus productos, según la Ley N.° 29733 de Protección de Datos Personales.</span></label>
+
+    <div class="aviso" id="aviso" role="alert"></div>
+    <button class="enviar" type="submit" id="btn">Enviar mis datos</button>
+  </main>
+  </form>
+
+  <footer>
+    <img src="../brand/v-128.png" alt="">
+    <div class="firma">Te da más. De verdad.</div>
+    <small>Hecho en San Martín · Paletas Amazónicas</small>
+  </footer>
+</div>
+
+<section id="gracias" aria-live="polite">
+  <img src="../brand/logo-crema.png" alt="Villaizán Paletas Amazónicas">
+  <div class="check"><svg aria-hidden="true" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#1E6B43" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+  <h2 id="graciasT">¡Gracias!</h2>
+  <p>Recibimos tus datos. Nuestro equipo comercial te contactará en los próximos días.</p>
+  <a class="ig" href="https://www.instagram.com/villaizanpaletasamazonicas" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#CA0202" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="#CA0202"/></svg>Síguenos en Instagram</a>
+  <div class="firma">Te da más. De verdad.</div>
+</section>
+
+<script>
+// URL del Apps Script implementado como aplicación web (termina en /exec)
+const SCRIPT_URL = "__SCRIPT_URL__";
+
+const UBIGEO = {"AMAZONAS":{"CHACHAPOYAS":["ASUNCION","BALSAS","CHACHAPOYAS","CHETO","CHILIQUIN","CHUQUIBAMBA","GRANADA","HUANCAS","LA JALCA","LEIMEBAMBA","LEVANTO","MAGDALENA","MARISCAL CASTILLA","MOLINOPAMPA","MONTEVIDEO","OLLEROS","QUINJALCA","SAN FRANCISCO DE DAGUAS","SAN ISIDRO DE MAINO","SOLOCO","SONCHE"],"BAGUA":["ARAMANGO","BAGUA","COPALLIN","EL PARCO","IMAZA","LA PECA"],"BONGARA":["CHISQUILLA","CHURUJA","COROSHA","CUISPES","FLORIDA","JAZAN","JUMBILLA","RECTA","SAN CARLOS","SHIPASBAMBA","VALERA","YAMBRASBAMBA"],"CONDORCANQUI":["EL CENEPA","NIEVA","RIO SANTIAGO"],"LUYA":["CAMPORREDONDO","COCABAMBA","COLCAMAR","CONILA","INGUILPATA","LAMUD","LONGUITA","LONYA CHICO","LUYA","LUYA VIEJO","MARIA","OCALLI","OCUMAL","PISUQUIA","PROVIDENCIA","SAN CRISTOBAL","SAN FRANCISCO DEL YESO","SAN JERONIMO","SAN JUAN DE LOPECANCHA","SANTA CATALINA","SANTO TOMAS","TINGO","TRITA"],"RODRIGUEZ DE MENDOZA":["CHIRIMOTO","COCHAMAL","HUAMBO","LIMABAMBA","LONGAR","MARISCAL BENAVIDES","MILPUC","OMIA","SAN NICOLAS","SANTA ROSA","TOTORA","VISTA ALEGRE"],"UTCUBAMBA":["BAGUA GRANDE","CAJARURO","CUMBA","EL MILAGRO","JAMALCA","LONYA GRANDE","YAMON"]},"ANCASH":{"HUARAZ":["COCHABAMBA","COLCABAMBA","HUANCHAY","HUARAZ","INDEPENDENCIA","JANGAS","LA LIBERTAD","OLLEROS","PAMPAS","PARIACOTO","PIRA","TARICA"],"AIJA":["AIJA","CORIS","HUACLLAN","LA MERCED","SUCCHA"],"ANTONIO RAYMONDI":["ACZO","CHACCHO","CHINGAS","LLAMELLIN","MIRGAS","SAN JUAN DE RONTOY"],"ASUNCION":["ACOCHACA","CHACAS"],"BOLOGNESI":["ABELARDO PARDO LEZAMETA","ANTONIO RAYMONDI","AQUIA","CAJACAY","CANIS","CHIQUIAN","COLQUIOC","HUALLANCA","HUASTA","HUAYLLACAYAN","LA PRIMAVERA","MANGAS","PACLLON","SAN MIGUEL DE CORPANQUI","TICLLOS"],"CARHUAZ":["ACOPAMPA","AMASHCA","ANTA","ATAQUERO","CARHUAZ","MARCARA","PARIAHUANCA","SAN MIGUEL DE ACO","SHILLA","TINCO","YUNGAR"],"CARLOS FERMIN FITZCARRALD":["SAN LUIS","SAN NICOLAS","YAUYA"],"CASMA":["BUENA VISTA ALTA","CASMA","COMANDANTE NOEL","YAUTAN"],"CORONGO":["ACO","BAMBAS","CORONGO","CUSCA","LA PAMPA","YANAC","YUPAN"],"HUARI":["ANRA","CAJAY","CHAVIN DE HUANTAR","HUACACHI","HUACCHIS","HUACHIS","HUANTAR","HUARI","MASIN","PAUCAS","PONTO","RAHUAPAMPA","RAPAYAN","SAN MARCOS","SAN PEDRO DE CHANA","UCO"],"HUARMEY":["COCHAPETI","CULEBRAS","HUARMEY","HUAYAN","MALVAS"],"HUAYLAS":["CARAZ","HUALLANCA","HUATA","HUAYLAS","MATO","PAMPAROMAS","PUEBLO LIBRE","SANTA CRUZ","SANTO TORIBIO","YURACMARCA"],"MARISCAL LUZURIAGA":["CASCA","ELEAZAR GUZMAN BARRON","FIDEL OLIVAS ESCUDERO","LLAMA","LLUMPA","LUCMA","MUSGA","PISCOBAMBA"],"OCROS":["ACAS","CAJAMARQUILLA","CARHUAPAMPA","COCHAS","CONGAS","LLIPA","OCROS","SAN CRISTOBAL DE RAJAN","SAN PEDRO","SANTIAGO DE CHILCAS"],"PALLASCA":["BOLOGNESI","CABANA","CONCHUCOS","HUACASCHUQUE","HUANDOVAL","LACABAMBA","LLAPO","PALLASCA","PAMPAS","SANTA ROSA","TAUCA"],"POMABAMBA":["HUAYLLAN","PAROBAMBA","POMABAMBA","QUINUABAMBA"],"RECUAY":["CATAC","COTAPARACO","HUAYLLAPAMPA","LLACLLIN","MARCA","PAMPAS CHICO","PARARIN","RECUAY","TAPACOCHA","TICAPAMPA"],"SANTA":["CACERES DEL PERU","CHIMBOTE","COISHCO","MACATE","MORO","NEPEÑA","NUEVO CHIMBOTE","SAMANCO","SANTA"],"SIHUAS":["ACOBAMBA","ALFONSO UGARTE","CASHAPAMPA","CHINGALPO","HUAYLLABAMBA","QUICHES","RAGASH","SAN JUAN","SICSIBAMBA","SIHUAS"],"YUNGAY":["CASCAPARA","MANCOS","MATACOTO","QUILLO","RANRAHIRCA","SHUPLUY","YANAMA","YUNGAY"]},"APURIMAC":{"ABANCAY":["ABANCAY","CHACOCHE","CIRCA","CURAHUASI","HUANIPACA","LAMBRAMA","PICHIRHUA","SAN PEDRO DE CACHORA","TAMBURCO"],"ANDAHUAYLAS":["ANDAHUAYLAS","ANDARAPA","CHIARA","HUANCARAMA","HUANCARAY","HUAYANA","JOSE MARIA ARGUEDAS","KAQUIABAMBA","KISHUARA","PACOBAMBA","PACUCHA","PAMPACHIRI","POMACOCHA","SAN ANTONIO DE CACHI","SAN JERONIMO","SAN MIGUEL DE CHACCRAMPA","SANTA MARIA DE CHICMO","TALAVERA","TUMAY HUARACA","TURPO"],"ANTABAMBA":["ANTABAMBA","EL ORO","HUAQUIRCA","JUAN ESPINOZA MEDRANO","OROPESA","PACHACONAS","SABAINO"],"AYMARAES":["CAPAYA","CARAYBAMBA","CHALHUANCA","CHAPIMARCA","COLCABAMBA","COTARUSE","HUAYLLO","JUSTO APU SAHUARAURA","LUCRE","POCOHUANCA","SAN JUAN DE CHACÑA","SAÑAYCA","SORAYA","TAPAIRIHUA","TINTAY","TORAYA","YANACA"],"COTABAMBAS":["CHALLHUAHUACHO","COTABAMBAS","COYLLURQUI","HAQUIRA","MARA","TAMBOBAMBA"],"CHINCHEROS":["AHUAYRO","ANCO-HUALLO","CHINCHEROS","COCHARCAS","EL PORVENIR","HUACCANA","LOS CHANKAS","OCOBAMBA","ONGOY","RANRACANCHA","ROCCHACC","URANMARCA"],"GRAU":["CHUQUIBAMBILLA","CURASCO","CURPAHUASI","GAMARRA","HUAYLLATI","MAMARA","MICAELA BASTIDAS","PATAYPAMPA","PROGRESO","SAN ANTONIO","SANTA ROSA","TURPAY","VILCABAMBA","VIRUNDO"]},"AREQUIPA":{"AREQUIPA":["ALTO SELVA ALEGRE","AREQUIPA","CAYMA","CERRO COLORADO","CHARACATO","CHIGUATA","JACOBO HUNTER","JOSE LUIS BUSTAMANTE Y RIVERO","LA JOYA","MARIANO MELGAR","MIRAFLORES","MOLLEBAYA","PAUCARPATA","POCSI","POLOBAYA","QUEQUEÑA","SABANDIA","SACHACA","SAN JUAN DE SIGUAS","SAN JUAN DE TARUCANI","SANTA ISABEL DE SIGUAS","SANTA RITA DE SIGUAS","SOCABAYA","TIABAYA","UCHUMAYO","VITOR","YANAHUARA","YARABAMBA","YURA"],"CAMANA":["CAMANA","JOSE MARIA QUIMPER","MARIANO NICOLAS VALCARCEL","MARISCAL CACERES","NICOLAS DE PIEROLA","OCOÑA","QUILCA","SAMUEL PASTOR"],"CARAVELI":["ACARI","ATICO","ATIQUIPA","BELLA UNION","CAHUACHO","CARAVELI","CHALA","CHAPARRA","HUANUHUANU","JAQUI","LOMAS","QUICACHA","YAUCA"],"CASTILLA":["ANDAGUA","APLAO","AYO","CHACHAS","CHILCAYMARCA","CHOCO","HUANCARQUI","MACHAGUAY","ORCOPAMPA","PAMPACOLCA","TIPAN","URACA","UÑON","VIRACO"],"CAYLLOMA":["ACHOMA","CABANACONDE","CALLALLI","CAYLLOMA","CHIVAY","COPORAQUE","HUAMBO","HUANCA","ICHUPAMPA","LARI","LLUTA","MACA","MADRIGAL","MAJES","SAN ANTONIO DE CHUCA","SIBAYO","TAPAY","TISCO","TUTI","YANQUE"],"CONDESUYOS":["ANDARAY","CAYARANI","CHICHAS","CHUQUIBAMBA","IRAY","RIO GRANDE","SALAMANCA","YANAQUIHUA"],"ISLAY":["COCACHACRA","DEAN VALDIVIA","ISLAY","MEJIA","MOLLENDO","PUNTA DE BOMBON"],"LA UNION":["ALCA","CHARCANA","COTAHUASI","HUAYNACOTAS","PAMPAMARCA","PUYCA","QUECHUALLA","SAYLA","TAURIA","TOMEPAMPA","TORO"]},"AYACUCHO":{"HUAMANGA":["ACOCRO","ACOS VINCHOS","ANDRES AVELINO CACERES DORREGARAY","AYACUCHO","CARMEN ALTO","CHIARA","JESUS NAZARENO","OCROS","PACAYCASA","QUINUA","SAN JOSE DE TICLLAS","SAN JUAN BAUTISTA","SANTIAGO DE PISCHA","SOCOS","TAMBILLO","VINCHOS"],"CANGALLO":["CANGALLO","CHUSCHI","LOS MOROCHUCOS","MARIA PARADO DE BELLIDO","PARAS","TOTOS"],"HUANCA SANCOS":["CARAPO","SACSAMARCA","SANCOS","SANTIAGO DE LUCANAMARCA"],"HUANTA":["AYAHUANCO","CANAYRE","CHACA","HUAMANGUILLA","HUANTA","IGUAIN","LLOCHEGUA","LURICOCHA","PUCACOLPA","PUTIS","SANTILLANA","SIVIA","UCHURACCAY"],"LA MAR":["ANCHIHUAY","ANCO","AYNA","CHILCAS","CHUNGUI","LUIS CARRANZA","NINABAMBA","ORONCCOY","PATIBAMBA","RIO MAGDALENA","SAMUGARI","SAN MIGUEL","SANTA ROSA","TAMBO","UNION PROGRESO"],"LUCANAS":["AUCARA","CABANA","CARMEN SALCEDO","CHAVIÑA","CHIPAO","HUAC-HUAS","LARAMATE","LEONCIO PRADO","LLAUTA","LUCANAS","OCAÑA","OTOCA","PUQUIO","SAISA","SAN CRISTOBAL","SAN JUAN","SAN PEDRO","SAN PEDRO DE PALCO","SANCOS","SANTA ANA DE HUAYCAHUACHO","SANTA LUCIA"],"PARINACOCHAS":["CHUMPI","CORACORA","CORONEL CASTAÑEDA","PACAPAUSA","PULLO","PUYUSCA","SAN FRANCISCO DE RAVACAYCO","UPAHUACHO"],"PAUCAR DEL SARA SARA":["COLTA","CORCULLA","LAMPA","MARCABAMBA","OYOLO","PARARCA","PAUSA","SAN JAVIER DE ALPABAMBA","SAN JOSE DE USHUA","SARA SARA"],"SUCRE":["BELEN","CHALCOS","CHILCAYOC","HUACAÑA","MORCOLLA","PAICO","QUEROBAMBA","SAN PEDRO DE LARCAY","SAN SALVADOR DE QUIJE","SANTIAGO DE PAUCARAY","SORAS"],"VICTOR FAJARDO":["ALCAMENCA","APONGO","ASQUIPATA","CANARIA","CAYARA","COLCA","HUAMANQUIQUIA","HUANCAPI","HUANCARAYLLA","HUAYA","SARHUA","VILCANCHOS"],"VILCAS HUAMAN":["ACCOMARCA","CARHUANCA","CONCEPCION","HUAMBALPA","INDEPENDENCIA","SAURAMA","VILCAS HUAMAN","VISCHONGO"]},"CAJAMARCA":{"CAJAMARCA":["ASUNCION","CAJAMARCA","CHETILLA","COSPAN","ENCAÑADA","JESUS","LLACANORA","LOS BAÑOS DEL INCA","MAGDALENA","MATARA","NAMORA","SAN JUAN"],"CAJABAMBA":["CACHACHI","CAJABAMBA","CONDEBAMBA","SITACOCHA"],"CELENDIN":["CELENDIN","CHUMUCH","CORTEGANA","HUASMIN","JORGE CHAVEZ","JOSE GALVEZ","LA LIBERTAD DE PALLAN","MIGUEL IGLESIAS","OXAMARCA","SOROCHUCO","SUCRE","UTCO"],"CHOTA":["ANGUIA","CHADIN","CHALAMARCA","CHIGUIRIP","CHIMBAN","CHOROPAMPA","CHOTA","COCHABAMBA","CONCHAN","HUAMBOS","LAJAS","LLAMA","MIRACOSTA","PACCHA","PION","QUEROCOTO","SAN JUAN DE LICUPIS","TACABAMBA","TOCMOCHE"],"CONTUMAZA":["CHILETE","CONTUMAZA","CUPISNIQUE","GUZMANGO","SAN BENITO","SANTA CRUZ DE TOLEDO","TANTARICA","YONAN"],"CUTERVO":["CALLAYUC","CHOROS","CUJILLO","CUTERVO","LA RAMADA","PIMPINGOS","QUEROCOTILLO","SAN ANDRES DE CUTERVO","SAN JUAN DE CUTERVO","SAN LUIS DE LUCMA","SANTA CRUZ","SANTO DOMINGO DE LA CAPILLA","SANTO TOMAS","SOCOTA","TORIBIO CASANOVA"],"HUALGAYOC":["BAMBAMARCA","CHUGUR","HUALGAYOC"],"JAEN":["BELLAVISTA","CHONTALI","COLASAY","HUABAL","JAEN","LAS PIRIAS","POMAHUACA","PUCARA","SALLIQUE","SAN FELIPE","SAN JOSE DEL ALTO","SANTA ROSA"],"SAN IGNACIO":["CHIRINOS","HUARANGO","LA COIPA","NAMBALLE","SAN IGNACIO","SAN JOSE DE LOURDES","TABACONAS"],"SAN MARCOS":["CHANCAY","EDUARDO VILLANUEVA","GREGORIO PITA","ICHOCAN","JOSE MANUEL QUIROZ","JOSE SABOGAL","PEDRO GALVEZ"],"SAN MIGUEL":["BOLIVAR","CALQUIS","CATILLUC","EL PRADO","LA FLORIDA","LLAPA","NANCHOC","NIEPOS","SAN GREGORIO","SAN MIGUEL","SAN SILVESTRE DE COCHAN","TONGOD","UNION AGUA BLANCA"],"SAN PABLO":["SAN BERNARDINO","SAN LUIS","SAN PABLO","TUMBADEN"],"SANTA CRUZ":["ANDABAMBA","CATACHE","CHANCAYBAÑOS","LA ESPERANZA","NINABAMBA","PULAN","SANTA CRUZ","SAUCEPAMPA","SEXI","UTICYACU","YAUYUCAN"]},"CALLAO":{"CALLAO":["BELLAVISTA","CALLAO","CARMEN DE LA LEGUA REYNOSO","LA PERLA","LA PUNTA","MI PERU","VENTANILLA"]},"CUSCO":{"CUSCO":["CCORCA","CUSCO","POROY","SAN JERONIMO","SAN SEBASTIAN","SANTIAGO","SAYLLA","WANCHAQ"],"ACOMAYO":["ACOMAYO","ACOPIA","ACOS","MOSOC LLACTA","POMACANCHI","RONDOCAN","SANGARARA"],"ANTA":["ANCAHUASI","ANTA","CACHIMAYO","CHINCHAYPUJIO","HUAROCONDO","LIMATAMBO","MOLLEPATA","PUCYURA","ZURITE"],"CALCA":["CALCA","COYA","LAMAY","LARES","PISAC","SAN SALVADOR","TARAY","YANATILE"],"CANAS":["CHECCA","KUNTURKANKI","LANGUI","LAYO","PAMPAMARCA","QUEHUE","TUPAC AMARU","YANAOCA"],"CANCHIS":["CHECACUPE","COMBAPATA","MARANGANI","PITUMARCA","SAN PABLO","SAN PEDRO","SICUANI","TINTA"],"CHUMBIVILCAS":["CAPACMARCA","CHAMACA","COLQUEMARCA","LIVITACA","LLUSCO","QUIÑOTA","SANTO TOMAS","VELILLE"],"ESPINAR":["ALTO PICHIGUA","CONDOROMA","COPORAQUE","ESPINAR","OCORURO","PALLPATA","PICHIGUA","SUYCKUTAMBO"],"LA CONVENCION":["CIELO PUNCO","ECHARATE","HUAYOPATA","INKAWASI","KUMPIRUSHIATO","MANITEA","MARANURA","MEGANTONI","OCOBAMBA","PICHARI","QUELLOUNO","QUIMBIRI","SANTA ANA","SANTA TERESA","UNION ASHÁNINKA","VILCABAMBA","VILLA KINTIARINA","VILLA VIRGEN"],"PARURO":["ACCHA","CCAPI","COLCHA","HUANOQUITE","OMACHA","PACCARITAMBO","PARURO","PILLPINTO","YAURISQUE"],"PAUCARTAMBO":["CAICAY","CHALLABAMBA","COLQUEPATA","HUANCARANI","KOSÑIPATA","PAUCARTAMBO"],"QUISPICANCHI":["ANDAHUAYLILLAS","CAMANTI","CCARHUAYO","CCATCA","CUSIPATA","HUARO","LUCRE","MARCAPATA","OCONGATE","OROPESA","QUIQUIJANA","URCOS"],"URUBAMBA":["CHINCHERO","HUAYLLABAMBA","MACHUPICCHU","MARAS","OLLANTAYTAMBO","URUBAMBA","YUCAY"]},"HUANCAVELICA":{"HUANCAVELICA":["ACOBAMBILLA","ACORIA","ASCENSION","CONAYCA","CUENCA","HUACHOCOLPA","HUANCAVELICA","HUANDO","HUAYLLAHUARA","IZCUCHACA","LARIA","MANTA","MARISCAL CACERES","MOYA","NUEVO OCCORO","PALCA","PILCHACA","VILCA","YAULI"],"ACOBAMBA":["ACOBAMBA","ANDABAMBA","ANTA","CAJA","MARCAS","PAUCARA","POMACOCHA","ROSARIO"],"ANGARAES":["ANCHONGA","CALLANMARCA","CCOCHACCASA","CHINCHO","CONGALLA","HUANCA-HUANCA","HUAYLLAY GRANDE","JULCAMARCA","LIRCAY","SAN ANTONIO DE ANTAPARCO","SANTO TOMAS DE PATA","SECCLLA"],"CASTROVIRREYNA":["ARMA","AURAHUA","CAPILLAS","CASTROVIRREYNA","CHUPAMARCA","COCAS","HUACHOS","HUAMATAMBO","MOLLEPAMPA","SAN JUAN","SANTA ANA","TANTARA","TICRAPO"],"CHURCAMPA":["ANCO","CHINCHIHUASI","CHURCAMPA","COSME","EL CARMEN","LA MERCED","LOCROJA","PACHAMARCA","PAUCARBAMBA","SAN MIGUEL DE MAYOCC","SAN PEDRO DE CORIS"],"HUAYTARA":["AYAVI","CORDOVA","HUAYACUNDO ARMA","HUAYTARA","LARAMARCA","OCOYO","PILPICHACA","QUERCO","QUITO-ARMA","SAN ANTONIO DE CUSICANCHA","SAN FRANCISCO DE SANGAYAICO","SAN ISIDRO","SANTIAGO DE CHOCORVOS","SANTIAGO DE QUIRAHUARA","SANTO DOMINGO DE CAPILLAS","TAMBO"],"TAYACAJA":["ACOSTAMBO","ACRAQUIA","AHUAYCHA","ANDAYMARCA","COCHABAMBA","COLCABAMBA","DANIEL HERNANDEZ","HUACHOCOLPA","HUARIBAMBA","LAMBRAS","PAMPAS","PAZOS","PICHOS","QUICHUAS","QUISHUAR","ROBLE","SALCABAMBA","SALCAHUASI","SAN MARCOS DE ROCCHAC","SANTIAGO DE TUCUMA","SURCUBAMBA","TINTAY PUNCU","ÑAHUIMPUQUIO"]},"HUANUCO":{"HUANUCO":["AMARILIS","CHINCHAO","CHURUBAMBA","HUANUCO","MARGOS","PILLCO MARCA","QUISQUI","SAN FRANCISCO DE CAYRAN","SAN PABLO DE PILLAO","SAN PEDRO DE CHAULAN","SANTA MARIA DEL VALLE","YACUS","YARUMAYO"],"AMBO":["AMBO","CAYNA","COLPAS","CONCHAMARCA","HUACAR","SAN FRANCISCO","SAN RAFAEL","TOMAY KICHWA"],"DOS DE MAYO":["CHUQUIS","LA UNION","MARIAS","PACHAS","QUIVILLA","RIPAN","SHUNQUI","SILLAPATA","YANAS"],"HUACAYBAMBA":["CANCHABAMBA","COCHABAMBA","HUACAYBAMBA","PINRA"],"HUAMALIES":["ARANCAY","CHAVIN DE PARIARCA","JACAS GRANDE","JIRCAN","LLATA","MIRAFLORES","MONZON","PUNCHAO","PUÑOS","SINGA","TANTAMAYO"],"LEONCIO PRADO":["CASTILLO GRANDE","DANIEL ALOMIAS ROBLES","HERMILIO VALDIZAN","JOSE CRESPO Y CASTILLO","LUYANDO","MARIANO DAMASO BERAUN","PUCAYACU","PUEBLO NUEVO","RUPA-RUPA","SANTO DOMINGO DE ANDA"],"MARAÑON":["CHOLON","HUACRACHUCO","LA MORADA","SAN BUENAVENTURA","SANTA ROSA DE ALTO YANAJANCA"],"PACHITEA":["CHAGLLA","MOLINO","PANAO","UMARI"],"PUERTO INCA":["CODO DEL POZUZO","HONORIA","PUERTO INCA","TOURNAVISTA","YUYAPICHIS"],"LAURICOCHA":["BAÑOS","JESUS","JIVIA","QUEROPALCA","RONDOS","SAN FRANCISCO DE ASIS","SAN MIGUEL DE CAURI"],"YAROWILCA":["APARICIO POMARES","CAHUAC","CHACABAMBA","CHAVINILLO","CHORAS","JACAS CHICO","OBAS","PAMPAMARCA"]},"ICA":{"ICA":["ICA","LA TINGUIÑA","LOS AQUIJES","OCUCAJE","PACHACUTEC","PARCONA","PUEBLO NUEVO","SALAS","SAN JOSE DE LOS MOLINOS","SAN JUAN BAUTISTA","SANTIAGO","SUBTANJALLA","TATE","YAUCA DEL ROSARIO"],"CHINCHA":["ALTO LARAN","CHAVIN","CHINCHA ALTA","CHINCHA BAJA","EL CARMEN","GROCIO PRADO","PUEBLO NUEVO","SAN JUAN DE YANAC","SAN PEDRO DE HUACARPANA","SUNAMPE","TAMBO DE MORA"],"NAZCA":["CHANGUILLO","EL INGENIO","MARCONA","NAZCA","VISTA ALEGRE"],"PALPA":["LLIPATA","PALPA","RIO GRANDE","SANTA CRUZ","TIBILLO"],"PISCO":["HUANCANO","HUMAY","INDEPENDENCIA","PARACAS","PISCO","SAN ANDRES","SAN CLEMENTE","TUPAC AMARU INCA"]},"JUNIN":{"HUANCAYO":["CARHUACALLANGA","CHACAPAMPA","CHICCHE","CHILCA","CHONGOS ALTO","CHUPURO","COLCA","CULLHUAS","EL TAMBO","HUACRAPUQUIO","HUALHUAS","HUANCAN","HUANCAYO","HUASICANCHA","HUAYUCACHI","INGENIO","PARIAHUANCA","PILCOMAYO","PUCARA","QUICHUAY","QUILCAS","SAN AGUSTIN","SAN JERONIMO DE TUNAN","SANTO DOMINGO DE ACOBAMBA","SAPALLANGA","SAÑO","SICAYA","VIQUES"],"CONCEPCION":["ACO","ANDAMARCA","CHAMBARA","COCHAS","COMAS","CONCEPCION","HEROINAS TOLEDO","MANZANARES","MARISCAL CASTILLA","MATAHUASI","MITO","NUEVE DE JULIO","ORCOTUNA","SAN JOSE DE QUERO","SANTA ROSA DE OCOPA"],"CHANCHAMAYO":["CHANCHAMAYO","PERENE","PICHANAQUI","SAN LUIS DE SHUARO","SAN RAMON","VITOC"],"JAUJA":["ACOLLA","APATA","ATAURA","CANCHAYLLO","CURICACA","EL MANTARO","HUAMALI","HUARIPAMPA","HUERTAS","JANJAILLO","JAUJA","JULCAN","LEONOR ORDOÑEZ","LLOCLLAPAMPA","MARCO","MASMA","MASMA CHICCHE","MOLINOS","MONOBAMBA","MUQUI","MUQUIYAUYO","PACA","PACCHA","PANCAN","PARCO","POMACANCHA","RICRAN","SAN LORENZO","SAN PEDRO DE CHUNAN","SAUSA","SINCOS","TUNAN MARCA","YAULI","YAUYOS"],"JUNIN":["CARHUAMAYO","JUNIN","ONDORES","ULCUMAYO"],"SATIPO":["COVIRIALI","LLAYLLA","MAZAMARI","PAMPA HERMOSA","PANGOA","RIO NEGRO","RIO TAMBO","SATIPO","VIZCATAN DEL ENE"],"TARMA":["ACOBAMBA","HUARICOLCA","HUASAHUASI","LA UNION","PALCA","PALCAMAYO","SAN PEDRO DE CAJAS","TAPO","TARMA"],"YAULI":["CHACAPALPA","HUAY-HUAY","LA OROYA","MARCAPOMACOCHA","MOROCOCHA","PACCHA","SANTA BARBARA DE CARHUACAYAN","SANTA ROSA DE SACCO","SUITUCANCHA","YAULI"],"CHUPACA":["AHUAC","CHONGOS BAJO","CHUPACA","HUACHAC","HUAMANCACA CHICO","SAN JUAN DE JARPA","SAN JUAN DE YSCOS","TRES DE DICIEMBRE","YANACANCHA"]},"LA LIBERTAD":{"TRUJILLO":["EL PORVENIR","FLORENCIA DE MORA","HUANCHACO","LA ESPERANZA","LAREDO","MOCHE","POROTO","SALAVERRY","SIMBAL","TRUJILLO","VICTOR LARCO HERRERA"],"ASCOPE":["ASCOPE","CASA GRANDE","CHICAMA","CHOCOPE","MAGDALENA DE CAO","PAIJAN","RAZURI","SANTIAGO DE CAO"],"BOLIVAR":["BAMBAMARCA","BOLIVAR","CONDORMARCA","LONGOTEA","UCHUMARCA","UCUNCHA"],"CHEPEN":["CHEPEN","PACANGA","PUEBLO NUEVO"],"JULCAN":["CALAMARCA","CARABAMBA","HUASO","JULCAN"],"OTUZCO":["AGALLPAMPA","CHARAT","HUARANCHAL","LA CUESTA","MACHE","OTUZCO","PARANDAY","SALPO","SINSICAP","USQUIL"],"PACASMAYO":["GUADALUPE","JEQUETEPEQUE","PACASMAYO","SAN JOSE","SAN PEDRO DE LLOC"],"PATAZ":["BULDIBUYO","CHILLIA","HUANCASPATA","HUAYLILLAS","HUAYO","ONGON","PARCOY","PATAZ","PIAS","SANTIAGO DE CHALLAS","TAURIJA","TAYABAMBA","URPAY"],"SANCHEZ CARRION":["CHUGAY","COCHORCO","CURGOS","HUAMACHUCO","MARCABAL","SANAGORAN","SARIN","SARTIMBAMBA"],"SANTIAGO DE CHUCO":["ANGASMARCA","CACHICADAN","MOLLEBAMBA","MOLLEPATA","QUIRUVILCA","SANTA CRUZ DE CHUCA","SANTIAGO DE CHUCO","SITABAMBA"],"GRAN CHIMU":["CASCAS","LUCMA","MARMOT","SAYAPULLO"],"VIRU":["CHAO","GUADALUPITO","VIRU"]},"LAMBAYEQUE":{"CHICLAYO":["CAYALTI","CHICLAYO","CHONGOYAPE","ETEN","ETEN PUERTO","JOSE LEONARDO ORTIZ","LA VICTORIA","LAGUNAS","MONSEFU","NUEVA ARICA","OYOTUN","PATAPO","PICSI","PIMENTEL","POMALCA","PUCALA","REQUE","SANTA ROSA","SAÑA","TUMAN"],"FERREÑAFE":["CAÑARIS","FERREÑAFE","INCAHUASI","MANUEL ANTONIO MESONES MURO","PITIPO","PUEBLO NUEVO"],"LAMBAYEQUE":["CHOCHOPE","ILLIMO","JAYANCA","LAMBAYEQUE","MOCHUMI","MORROPE","MOTUPE","OLMOS","PACORA","SALAS","SAN JOSE","TUCUME"]},"LIMA":{"LIMA":["ANCON","ATE","BARRANCO","BREÑA","CARABAYLLO","CHACLACAYO","CHORRILLOS","CIENEGUILLA","COMAS","EL AGUSTINO","INDEPENDENCIA","JESUS MARIA","LA MOLINA","LA VICTORIA","LIMA","LINCE","LOS OLIVOS","LURIGANCHO","LURIN","MAGDALENA DEL MAR","MIRAFLORES","PACHACAMAC","PUCUSANA","PUEBLO LIBRE","PUENTE PIEDRA","PUNTA HERMOSA","PUNTA NEGRA","RIMAC","SAN BARTOLO","SAN BORJA","SAN ISIDRO","SAN JUAN DE LURIGANCHO","SAN JUAN DE MIRAFLORES","SAN LUIS","SAN MARTIN DE PORRES","SAN MIGUEL","SANTA ANITA","SANTA MARIA DE HUACHIPA","SANTA MARIA DEL MAR","SANTA ROSA","SANTIAGO DE SURCO","SURQUILLO","VILLA EL SALVADOR","VILLA MARIA DEL TRIUNFO"],"BARRANCA":["BARRANCA","PARAMONGA","PATIVILCA","SUPE","SUPE PUERTO"],"CAJATAMBO":["CAJATAMBO","COPA","GORGOR","HUANCAPON","MANAS"],"CANTA":["ARAHUAY","CANTA","HUAMANTANGA","HUAROS","LACHAQUI","SAN BUENAVENTURA","SANTA ROSA DE QUIVES"],"CAÑETE":["ASIA","CALANGO","CERRO AZUL","CHILCA","COAYLLO","IMPERIAL","LUNAHUANA","MALA","NUEVO IMPERIAL","PACARAN","QUILMANA","SAN ANTONIO","SAN LUIS","SAN VICENTE DE CAÑETE","SANTA CRUZ DE FLORES","ZUÑIGA"],"HUARAL":["ATAVILLOS ALTO","ATAVILLOS BAJO","AUCALLAMA","CHANCAY","HUARAL","IHUARI","LAMPIAN","PACARAOS","SAN MIGUEL DE ACOS","SANTA CRUZ DE ANDAMARCA","SUMBILCA","VEINTISIETE DE NOVIEMBRE"],"HUAROCHIRI":["ANTIOQUIA","CALLAHUANCA","CARAMPOMA","CHICLA","CUENCA","HUACHUPAMPA","HUANZA","HUAROCHIRI","LAHUAYTAMBO","LANGA","LARAOS","MARIATANA","MATUCANA","RICARDO PALMA","SAN ANDRES DE TUPICOCHA","SAN ANTONIO","SAN BARTOLOME","SAN DAMIAN","SAN JUAN DE IRIS","SAN JUAN DE TANTARANCHE","SAN LORENZO DE QUINTI","SAN MATEO","SAN MATEO DE OTAO","SAN PEDRO DE CASTA","SAN PEDRO DE HUANCAYRE","SANGALLAYA","SANTA CRUZ DE COCACHACRA","SANTA EULALIA","SANTIAGO DE ANCHUCAYA","SANTIAGO DE TUNA","SANTO DOMINGO DE LOS OLLEROS","SURCO"],"HUAURA":["AMBAR","CALETA DE CARQUIN","CHECRAS","HUACHO","HUALMAY","HUAURA","LEONCIO PRADO","PACCHO","SANTA LEONOR","SANTA MARIA","SAYAN","VEGUETA"],"OYON":["ANDAJES","CAUJUL","COCHAMARCA","NAVAN","OYON","PACHANGARA"],"YAUYOS":["ALIS","AYAUCA","AYAVIRI","AZANGARO","CACRA","CARANIA","CATAHUASI","CHOCOS","COCHAS","COLONIA","HONGOS","HUAMPARA","HUANCAYA","HUANGASCAR","HUANTAN","HUAÑEC","LARAOS","LINCHA","MADEAN","MIRAFLORES","OMAS","PUTINZA","QUINCHES","QUINOCAY","SAN JOAQUIN","SAN PEDRO DE PILAS","TANTA","TAURIPAMPA","TOMAS","TUPE","VITIS","VIÑAC","YAUYOS"]},"LORETO":{"MAYNAS":["ALTO NANAY","BELEN","FERNANDO LORES","INDIANA","IQUITOS","LAS AMAZONAS","MAZAN","NAPO","PUNCHANA","PUTUMAYO","SAN JUAN BAUTISTA","TENIENTE MANUEL CLAVERO","TORRES CAUSANA"],"ALTO AMAZONAS":["BALSAPUERTO","JEBEROS","LAGUNAS","SANTA CRUZ","TENIENTE CESAR LOPEZ ROJAS","YURIMAGUAS"],"LORETO":["NAUTA","PARINARI","TIGRE","TROMPETEROS","URARINAS"],"MARISCAL RAMON CASTILLA":["PEBAS","RAMON CASTILLA","SAN PABLO","YAVARI"],"REQUENA":["ALTO TAPICHE","CAPELO","EMILIO SAN MARTIN","JENARO HERRERA","MAQUIA","PUINAHUA","REQUENA","SAQUENA","SOPLIN","TAPICHE","YAQUERANA"],"UCAYALI":["CONTAMANA","INAHUAYA","PADRE MARQUEZ","PAMPA HERMOSA","SARAYACU","VARGAS GUERRA"],"DATEM DEL MARAÑON":["ANDOAS","BARRANCA","CAHUAPANAS","MANSERICHE","MORONA","PASTAZA"],"PUTUMAYO":["PUTUMAYO","ROSA PANDURO","TENIENTE MANUEL CLAVERO","YAGUAS"]},"MADRE DE DIOS":{"TAMBOPATA":["INAMBARI","LABERINTO","LAS PIEDRAS","TAMBOPATA"],"MANU":["FITZCARRALD","HUEPETUHE","MADRE DE DIOS","MANU"],"TAHUAMANU":["IBERIA","IÑAPARI","TAHUAMANU"]},"MOQUEGUA":{"MARISCAL NIETO":["CARUMAS","CUCHUMBAYA","MOQUEGUA","SAMEGUA","SAN ANTONIO","SAN CRISTOBAL","TORATA"],"GENERAL SANCHEZ CERRO":["CHOJATA","COALAQUE","ICHUÑA","LA CAPILLA","LLOQUE","MATALAQUE","OMATE","PUQUINA","QUINISTAQUILLAS","UBINAS","YUNGA"],"ILO":["EL ALGARROBAL","ILO","PACOCHA"]},"PASCO":{"PASCO":["CHAUPIMARCA","HUACHON","HUARIACA","HUAYLLAY","NINACACA","PALLANCHACRA","PAUCARTAMBO","SAN FRANCISCO DE ASIS DE YARUSYACAN","SIMON BOLIVAR","TICLACAYAN","TINYAHUARCO","VICCO","YANACANCHA"],"DANIEL ALCIDES CARRION":["CHACAYAN","GOYLLARISQUIZGA","PAUCAR","SAN PEDRO DE PILLAO","SANTA ANA DE TUSI","TAPUC","VILCABAMBA","YANAHUANCA"],"OXAPAMPA":["CHONTABAMBA","CONSTITUCION","HUANCABAMBA","OXAPAMPA","PALCAZU","POZUZO","PUERTO BERMUDEZ","VILLA RICA"]},"PIURA":{"PIURA":["CASTILLA","CATACAOS","CURA MORI","EL TALLAN","LA ARENA","LA UNION","LAS LOMAS","PIURA","TAMBO GRANDE","VEINTISEIS DE OCTUBRE"],"AYABACA":["AYABACA","FRIAS","JILILI","LAGUNAS","MONTERO","PACAIPAMPA","PAIMAS","SAPILLICA","SICCHEZ","SUYO"],"HUANCABAMBA":["CANCHAQUE","EL CARMEN DE LA FRONTERA","HUANCABAMBA","HUARMACA","LALAQUIZ","SAN MIGUEL DE EL FAIQUE","SONDOR","SONDORILLO"],"MORROPON":["BUENOS AIRES","CHALACO","CHULUCANAS","LA MATANZA","MORROPON","SALITRAL","SAN JUAN DE BIGOTE","SANTA CATALINA DE MOSSA","SANTO DOMINGO","YAMANGO"],"PAITA":["AMOTAPE","ARENAL","COLAN","LA HUACA","PAITA","TAMARINDO","VICHAYAL"],"SULLANA":["BELLAVISTA","IGNACIO ESCUDERO","LANCONES","MARCAVELICA","MIGUEL CHECA","QUERECOTILLO","SALITRAL","SULLANA"],"TALARA":["EL ALTO","LA BREA","LOBITOS","LOS ORGANOS","MANCORA","PARIÑAS"],"SECHURA":["BELLAVISTA DE LA UNION","BERNAL","CRISTO NOS VALGA","RINCONADA LLICUAR","SECHURA","VICE"]},"PUNO":{"PUNO":["ACORA","AMANTANI","ATUNCOLLA","CAPACHICA","CHUCUITO","COATA","HUATA","MAÑAZO","PAUCARCOLLA","PICHACANI","PLATERIA","PUNO","SAN ANTONIO","TIQUILLACA","VILQUE"],"AZANGARO":["ACHAYA","ARAPA","ASILLO","AZANGARO","CAMINACA","CHUPA","JOSE DOMINGO CHOQUEHUANCA","MUÑANI","POTONI","SAMAN","SAN ANTON","SAN JOSE","SAN JUAN DE SALINAS","SANTIAGO DE PUPUJA","TIRAPATA"],"CARABAYA":["AJOYANI","AYAPATA","COASA","CORANI","CRUCERO","ITUATA","MACUSANI","OLLACHEA","SAN GABAN","USICAYOS"],"CHUCUITO":["DESAGUADERO","HUACULLANI","JULI","KELLUYO","PISACOMA","POMATA","ZEPITA"],"EL COLLAO":["CAPAZO","CONDURIRI","ILAVE","PILCUYO","SANTA ROSA"],"HUANCANE":["COJATA","HUANCANE","HUATASANI","INCHUPALLA","PUSI","ROSASPATA","TARACO","VILQUE CHICO"],"LAMPA":["CABANILLA","CALAPUJA","LAMPA","NICASIO","OCUVIRI","PALCA","PARATIA","PUCARA","SANTA LUCIA","VILAVILA"],"MELGAR":["ANTAUTA","AYAVIRI","CUPI","LLALLI","MACARI","NUÑOA","ORURILLO","SANTA ROSA","UMACHIRI"],"MOHO":["CONIMA","HUAYRAPATA","MOHO","TILALI"],"SAN ANTONIO DE PUTINA":["ANANEA","PEDRO VILCA APAZA","PUTINA","QUILCAPUNCU","SINA"],"SAN ROMAN":["CABANA","CABANILLAS","CARACOTO","JULIACA","SAN MIGUEL"],"SANDIA":["ALTO INAMBARI","CUYOCUYO","LIMBANI","PATAMBUCO","PHARA","QUIACA","SAN JUAN DEL ORO","SAN PEDRO DE PUTINA PUNCO","SANDIA","YANAHUAYA"],"YUNGUYO":["ANAPIA","COPANI","CUTURAPI","OLLARAYA","TINICACHI","UNICACHI","YUNGUYO"]},"SAN MARTIN":{"MOYOBAMBA":["CALZADA","HABANA","JEPELACIO","MOYOBAMBA","SORITOR","YANTALO"],"BELLAVISTA":["ALTO BIAVO","BAJO BIAVO","BELLAVISTA","HUALLAGA","SAN PABLO","SAN RAFAEL"],"EL DORADO":["AGUA BLANCA","SAN JOSE DE SISA","SAN MARTIN","SANTA ROSA","SHATOJA"],"HUALLAGA":["ALTO SAPOSOA","EL ESLABON","PISCOYACU","SACANCHE","SAPOSOA","TINGO DE SAPOSOA"],"LAMAS":["ALONSO DE ALVARADO","BARRANQUITA","CAYNARACHI","CUÑUMBUQUI","LAMAS","PINTO RECODO","RUMISAPA","SAN ROQUE DE CUMBAZA","SHANAO","TABALOSOS","ZAPATERO"],"MARISCAL CACERES":["CAMPANILLA","HUICUNGO","JUANJUI","PACHIZA","PAJARILLO"],"PICOTA":["BUENOS AIRES","CASPISAPA","PICOTA","PILLUANA","PUCACACA","SAN CRISTOBAL","SAN HILARION","SHAMBOYACU","TINGO DE PONASA","TRES UNIDOS"],"RIOJA":["AWAJUN","ELIAS SOPLIN VARGAS","NUEVA CAJAMARCA","PARDO MIGUEL","POSIC","RIOJA","SAN FERNANDO","YORONGOS","YURACYACU"],"SAN MARTIN":["ALBERTO LEVEAU","CACATACHI","CHAZUTA","CHIPURANA","EL PORVENIR","HUIMBAYOC","JUAN GUERRA","LA BANDA DE SHILCAYO","MORALES","PAPAPLAYA","SAN ANTONIO","SAUCE","SHAPAJA","TARAPOTO"],"TOCACHE":["NUEVO PROGRESO","POLVORA","SANTA LUCIA","SHUNTE","TOCACHE","UCHIZA"]},"TACNA":{"TACNA":["ALTO DE LA ALIANZA","CALANA","CIUDAD NUEVA","CORONEL GREGORIO ALBARRACIN LANCHIPA","INCLAN","LA YARADA LOS PALOS","PACHIA","PALCA","POCOLLAY","SAMA","TACNA"],"CANDARAVE":["CAIRANI","CAMILACA","CANDARAVE","CURIBAYA","HUANUARA","QUILAHUANI"],"JORGE BASADRE":["ILABAYA","ITE","LOCUMBA"],"TARATA":["ESTIQUE","ESTIQUE-PAMPA","HEROES ALBARRACIN CHUCATAMANI","SITAJARA","SUSAPAYA","TARATA","TARUCACHI","TICACO"]},"TUMBES":{"TUMBES":["CORRALES","LA CRUZ","PAMPAS DE HOSPITAL","SAN JACINTO","SAN JUAN DE LA VIRGEN","TUMBES"],"CONTRALMIRANTE VILLAR":["CANOAS DE PUNTA SAL","CASITAS","ZORRITOS"],"ZARUMILLA":["AGUAS VERDES","MATAPALO","PAPAYAL","ZARUMILLA"]},"UCAYALI":{"CORONEL PORTILLO":["CALLERIA","CAMPOVERDE","IPARIA","MANANTAY","MASISEA","NUEVA REQUENA","YARINACOCHA"],"ATALAYA":["RAYMONDI","SEPAHUA","TAHUANIA","YURUA"],"PADRE ABAD":["ALEXANDER VON HUMBOLDT","BOQUERON","CURIMANA","HUIPOCA","IRAZOLA","NESHUYA","PADRE ABAD"],"PURUS":["PURUS"]}};
+const TIPOS = ["Bodega","Mini Market","Cafetería","Hostal","Hotel","Panadería","Supermercado","Market","Centro recreacional","Patio de comidas","Oficinas","Grifo","Otros"];
+const COMO = ["Redes sociales","Un vendedor","Feria","Recomendación","Otro"];
+
+const $ = id => document.getElementById(id);
+const fill = (sel, items, first) => {
+  sel.innerHTML = "";
+  sel.add(new Option(first, ""));
+  items.forEach(t => sel.add(new Option(t, t)));
+};
+fill($("tipo"), TIPOS, "Elige una opción");
+fill($("como"), COMO, "Elige una opción");
+fill($("departamento"), Object.keys(UBIGEO).sort((a,b)=>a.localeCompare(b,"es")), "Elige el departamento");
+
+$("departamento").addEventListener("change", e => {
+  const d = e.target.value, p = $("provincia"), t = $("distrito");
+  if (d) { fill(p, Object.keys(UBIGEO[d]).sort((a,b)=>a.localeCompare(b,"es")), "Elige la provincia"); p.disabled = false; }
+  else { fill(p, [], "Primero elige el departamento"); p.disabled = true; }
+  fill(t, [], "Primero elige la provincia"); t.disabled = true;
+});
+$("provincia").addEventListener("change", e => {
+  const d = $("departamento").value, v = e.target.value, t = $("distrito");
+  if (v) { fill(t, UBIGEO[d][v], "Elige el distrito"); t.disabled = false; }
+  else { fill(t, [], "Primero elige la provincia"); t.disabled = true; }
+});
+$("tipo").addEventListener("change", e => {
+  $("otroBox").classList.toggle("oculto", e.target.value !== "Otros");
+});
+["dni","ruc","telefono"].forEach(id => $(id).addEventListener("input", e => {
+  e.target.value = e.target.value.replace(/\D/g, "");
+}));
+
+const reglas = {
+  nombre: () => $("nombre").value.trim().split(/\s+/).length >= 2,
+  dni: () => /^\d{8}$/.test($("dni").value),
+  ruc: () => /^\d{11}$/.test($("ruc").value),
+  telefono: () => /^9\d{8}$/.test($("telefono").value),
+  tipo: () => !!$("tipo").value,
+  otro: () => $("tipo").value !== "Otros" || $("otro").value.trim().length > 1,
+  departamento: () => !!$("departamento").value,
+  provincia: () => !!$("provincia").value,
+  distrito: () => !!$("distrito").value,
+  como: () => !!$("como").value,
+  acepta: () => $("acepta").checked
+};
+document.querySelectorAll(".campo").forEach(c => {
+  const ev = () => { if (c.classList.contains("bad") && reglas[c.dataset.v]()) c.classList.remove("bad"); };
+  c.addEventListener("input", ev); c.addEventListener("change", ev);
+});
+
+$("f").addEventListener("submit", async e => {
+  e.preventDefault();
+  const aviso = $("aviso"); aviso.style.display = "none";
+  let primero = null;
+  document.querySelectorAll(".campo").forEach(c => {
+    const ok = reglas[c.dataset.v]();
+    c.classList.toggle("bad", !ok);
+    if (!ok && !primero) primero = c;
+  });
+  if (primero) {
+    primero.scrollIntoView({behavior:"smooth", block:"center"});
+    const el = primero.querySelector("input,select"); if (el) setTimeout(()=>el.focus({preventScroll:true}), 350);
+    return;
+  }
+  if ($("web").value) return; // bot
+
+  const datos = {
+    nombre: $("nombre").value.trim(), dni: $("dni").value, ruc: $("ruc").value,
+    telefono: $("telefono").value, tipo: $("tipo").value,
+    otro: $("tipo").value === "Otros" ? $("otro").value.trim() : "",
+    departamento: $("departamento").value, provincia: $("provincia").value,
+    distrito: $("distrito").value, como: $("como").value, acepta: "Sí"
+  };
+  const btn = $("btn"); btn.disabled = true; btn.textContent = "Enviando…";
+  try {
+    const r = await fetch(SCRIPT_URL, { method: "POST", body: JSON.stringify(datos) });
+    const j = await r.json();
+    if (!j.ok) throw new Error(j.error || "error");
+    $("graciasT").textContent = "¡Gracias, " + datos.nombre.split(/\s+/)[0] + "!";
+    document.body.classList.add("listo");
+    window.scrollTo(0, 0);
+  } catch (err) {
+    aviso.textContent = "No pudimos enviar tus datos. Revisa tu conexión e inténtalo de nuevo.";
+    aviso.style.display = "block";
+    btn.disabled = false; btn.textContent = "Enviar mis datos";
+  }
+});
+</script>
+</body>
+</html>
