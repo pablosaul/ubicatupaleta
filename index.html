@@ -151,6 +151,8 @@ const CONFIG = {
   // ID del Google Sheet (lo que va entre /d/ y /edit en el link). Vacío = usa la lista guardada abajo.
   SHEET_ID: '1-XCwmXV7BuP_saDBnxuRhP0VNhTkYQy-gxh85iISqrk',
   // WhatsApp para distribuidores: código de país + número, sin espacios ni +. Ej: 51987654321
+  // Página a la que lleva el botón QUIERO SER DISTRIBUIDOR
+  DISTRIBUIDOR_URL: 'https://pablosaul.github.io/ubicatupaleta/distribuidores/',
   WHATSAPP: '',
   MENSAJE_DISTRIBUIDOR: 'Hola, quiero ser distribuidor de paletas Villaizán. Mi negocio es:',
   ZONA_SUR: 'Sur chico y Paracas'
@@ -377,7 +379,7 @@ async function startLeaflet(){
 function webglOK(){try{const c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'))}catch(e){return false}}
 (async()=>{
   const cta=$('cta');
-  cta.href=CONFIG.WHATSAPP?`https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(CONFIG.MENSAJE_DISTRIBUIDOR)}`:'#';
+  cta.href=CONFIG.DISTRIBUIDOR_URL||(CONFIG.WHATSAPP?`https://wa.me/${CONFIG.WHATSAPP}?text=${encodeURIComponent(CONFIG.MENSAJE_DISTRIBUIDOR)}`:'#');cta.removeAttribute('target');
   data=clean(RESPALDO);buildUI();
   load().then(l=>{if(l&&l.length&&l!==data){data=l;buildUI();if(sel&&READY)fit()}}).catch(()=>{});
   if(!window.maplibregl||!webglOK()){startLeaflet();return}
